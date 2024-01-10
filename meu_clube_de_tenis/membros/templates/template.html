@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+{% with primeiro_nome="Tobias" %}
+<h1>Ola {{ primeiro_nome }}</h1>
+{% endwith %}
+
+<ul>
+  {% for x in meus_membros %}
+    <li>{{ x.primeiro_nome }}</li>
+  {% endfor %}
+</ul>
+
+
+<p>In views.py you can see what the fruits variable looks like.</p>
+
+</body>
+</html>
