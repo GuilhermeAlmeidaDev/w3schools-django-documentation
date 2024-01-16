@@ -1,0 +1,99 @@
+<!-- FILEPATH: /d:/Projects/project-management-platform/meu_clube_de_tenis/membros/syntax_study/for.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Django: For</title>
+</head>
+<body>
+    <h1>Tag for do Django</h1>
+    <h2>Laços For</h2>
+    <p>Um laço for é usado para iterar sobre uma sequência, como percorrer itens em um array, uma lista ou um dicionário.</p>
+
+    <h3>Exemplo: Percorrer os itens de uma lista</h3>
+    <ul>
+        {% for x in fruits %}
+            <li>{{ x }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Exemplo: Percorrer uma lista de dicionários</h3>
+    <ul>
+        {% for x in cars %}
+            <li>
+                <h4>{{ x.brand }}</h4>
+                <p>{{ x.model }}</p>
+                <p>{{ x.year }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Dados de um Modelo</h2>
+    <p>Dados em um modelo são como uma tabela com linhas e colunas.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>nome</th>
+                <th>sobrenome</th>
+                <th>telefone</th>
+                <th>data_de_ingresso</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for x in members %}
+                <tr>
+                    <td>{{ x.id }}</td>
+                    <td>{{ x.firstname }}</td>
+                    <td>{{ x.lastname }}</td>
+                    <td>{{ x.phone }}</td>
+                    <td>{{ x.joined_date }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h3>Exemplo: Percorrer itens buscados de um banco de dados</h3>
+    <ul>
+        {% for x in members %}
+            <li>
+                <h4>{{ x.id }}</h4>
+                <p>{{ x.firstname }} {{ x.lastname }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Reverso</h2>
+    <p>A palavra-chave reversed é usada quando você deseja fazer o loop em ordem reversa.</p>
+    <ul>
+        {% for x in members reversed %}
+            <li>
+                <h4>{{ x.id }}</h4>
+                <p>{{ x.firstname }} {{ x.lastname }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h2>Vazio</h2>
+    <p>A palavra-chave empty pode ser usada se você deseja fazer algo especial se o objeto estiver vazio.</p>
+    <ul>
+        {% for x in emptytestobject %}
+            <li>{{ x.firstname }}</li>
+        {% empty %}
+            <li>Sem membros</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Variáveis de Loop</h2>
+    <p>O Django possui algumas variáveis que estão disponíveis para você dentro de um loop:</p>
+    <ul>
+        {% for x in fruits %}
+            <li>forloop.counter: {{ forloop.counter }}</li>
+            <li>forloop.counter0: {{ forloop.counter0 }}</li>
+            <li>forloop.first: {{ forloop.first }}</li>
+            <li>forloop.last: {{ forloop.last }}</li>
+            <li>forloop.revcounter: {{ forloop.revcounter }}</li>
+            <li>forloop.revcounter0: {{ forloop.revcounter0 }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
