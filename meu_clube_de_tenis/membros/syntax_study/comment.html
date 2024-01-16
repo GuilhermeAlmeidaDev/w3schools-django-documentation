@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Django: Comentários</title>
+</head>
+<body>
+    <h1>Tag de Comentário do Django</h1>
+    <p>Comentários permitem que você tenha seções de código que devem ser ignoradas.</p>
+
+    <h2>Exemplo</h2>
+    <p>Obtenha seu próprio servidor Django</p>
+    <h1>Bem-vindos a todos</h1>
+    {% comment %}
+        <h1>Bem-vindas senhoras e senhores</h1>
+    {% endcomment %}
+
+    <h2>Descrição do Comentário</h2>
+    <p>Você pode adicionar uma mensagem ao seu comentário, para ajudá-lo a lembrar por que você escreveu o comentário, ou como mensagem para outras pessoas que estão lendo o código.</p>
+
+    <h2>Exemplo</h2>
+    <p>Adicione uma descrição ao seu comentário:</p>
+    <h1>Bem-vindos a todos</h1>
+    {% comment "esta era a mensagem de boas-vindas original" %}
+        <h1>Bem-vindas senhoras e senhores</h1>
+    {% endcomment %}
+
+    <h2>Comentários Menores</h2>
+    <p>Você também pode usar as tags {# ... #} ao comentar o código, o que pode ser mais fácil para comentários menores:</p>
+
+    <h2>Exemplo</h2>
+    <p>Comente a palavra "Todos":</p>
+    <h1>Bem-vindos{# Todos#}</h1>
+
+    <h2>Comentários em Views</h2>
+    <p>As views são escritas em Python, e os comentários em Python são escritos com o caractere #:</p>
+
+    <h2>Exemplo</h2>
+    <p>Comente uma seção na view:</p>
+    <pre><code>
+        from django.http import HttpResponse
+        from django.template import loader
+
+        def testing(request):
+            template = loader.get_template('template.html')
+            #context = {
+            # 'var1': 'John',
+            #}
+            return HttpResponse(template.render())
+    </code></pre>
+
+    <p>Leia mais sobre Comentários em Python no nosso Tutorial de Comentários em Python.</p>
+</body>
+</html>
