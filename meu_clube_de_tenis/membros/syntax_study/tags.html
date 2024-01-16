@@ -1,0 +1,138 @@
+<!-- FILEPATH: /d:/Projects/project-management-platform/meu_clube_de_tenis/membros/syntax_study/tags.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Django: Tags</title>
+</head>
+<body>
+    <h1>Tags de Template</h1>
+    <p>Em templates do Django, você pode executar lógica de programação como if statements e for loops.</p>
+    <p>Essas palavras-chave, if e for, são chamadas de "tags de template" no Django.</p>
+    <p>Para executar tags de template, as envolvemos em colchetes {% %}.</p>
+
+    <h2>Exemplo: if statement</h2>
+    <p>templates/template.html:</p>
+    <pre>
+        {% if greeting == 1 %}
+            <h1>Olá</h1>
+        {% else %}
+            <h1>Tchau</h1>
+        {% endif %}
+    </pre>
+
+    <h2>Exemplo: for loop</h2>
+    <p>templates/template.html:</p>
+    <pre>
+        <ul>
+            {% for x in mymembers %}
+                <li>{{ x.firstname }}</li>
+            {% endfor %}
+        </ul>
+    </pre>
+
+    <h2>Referência de Tags</h2>
+    <p>Uma lista de todas as tags de template:</p>
+    <table>
+        <tr>
+            <th>Tag</th>
+            <th>Descrição</th>
+        </tr>
+        <tr>
+            <td>autoescape</td>
+            <td>Especifica se o modo de autoescape está ligado ou desligado</td>
+        </tr>
+        <tr>
+            <td>block</td>
+            <td>Especifica uma seção de bloco</td>
+        </tr>
+        <tr>
+            <td>comment</td>
+            <td>Especifica uma seção de comentário</td>
+        </tr>
+        <tr>
+            <td>csrf_token</td>
+            <td>Protege formulários contra Cross Site Request Forgeries</td>
+        </tr>
+        <tr>
+            <td>cycle</td>
+            <td>Especifica o conteúdo a ser usado em cada ciclo de um loop</td>
+        </tr>
+        <tr>
+            <td>debug</td>
+            <td>Especifica informações de depuração</td>
+        </tr>
+        <tr>
+            <td>extends</td>
+            <td>Especifica um template pai</td>
+        </tr>
+        <tr>
+            <td>filter</td>
+            <td>Filtra o conteúdo antes de retorná-lo</td>
+        </tr>
+        <tr>
+            <td>firstof</td>
+            <td>Retorna a primeira variável não vazia</td>
+        </tr>
+        <tr>
+            <td>for</td>
+            <td>Especifica um loop for</td>
+        </tr>
+        <tr>
+            <td>if</td>
+            <td>Especifica uma declaração if</td>
+        </tr>
+        <tr>
+            <td>ifchanged</td>
+            <td>Usado em loops for. Exibe um bloco apenas se um valor foi alterado desde a última iteração</td>
+        </tr>
+        <tr>
+            <td>include</td>
+            <td>Especifica o conteúdo/template incluído</td>
+        </tr>
+        <tr>
+            <td>load</td>
+            <td>Carrega tags de template de outra biblioteca</td>
+        </tr>
+        <tr>
+            <td>lorem</td>
+            <td>Exibe texto aleatório</td>
+        </tr>
+        <tr>
+            <td>now</td>
+            <td>Exibe a data/hora atual</td>
+        </tr>
+        <tr>
+            <td>regroup</td>
+            <td>Ordena um objeto por um grupo</td>
+        </tr>
+        <tr>
+            <td>resetcycle</td>
+            <td>Usado em ciclos. Reinicia o ciclo</td>
+        </tr>
+        <tr>
+            <td>spaceless</td>
+            <td>Remove espaços em branco entre tags HTML</td>
+        </tr>
+        <tr>
+            <td>templatetag</td>
+            <td>Exibe uma tag de template especificada</td>
+        </tr>
+        <tr>
+            <td>url</td>
+            <td>Retorna a parte URL absoluta de uma URL</td>
+        </tr>
+        <tr>
+            <td>verbatim</td>
+            <td>Especifica conteúdos que não devem ser renderizados pelo mecanismo de template</td>
+        </tr>
+        <tr>
+            <td>widthratio</td>
+            <td>Calcula um valor de largura com base na proporção entre um valor dado e um valor máximo</td>
+        </tr>
+        <tr>
+            <td>with</td>
+            <td>Especifica uma variável a ser usada no bloco</td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!-- FILEPATH: /d:/Projects/project-management-platform/meu_clube_de_tenis/membros/syntax_study/ifelse.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Django: if Else</title>
+</head>
+<body>
+    <h1>Declaração If</h1>
+    <p>Uma declaração if avalia uma variável e executa um bloco de código se o valor for verdadeiro.</p>
+
+    <h2>Exemplo:</h2>
+    <pre>
+        <!-- BEGIN: Exemplo de Declaração If -->
+        {% if cumprimento == 1 %}
+            <h1>Olá</h1>
+        {% endif %}
+        <!-- END: Exemplo de Declaração If -->
+    </pre>
+
+    <h2>Elif</h2>
+    <p>A palavra-chave elif significa "se as condições anteriores não forem verdadeiras, então tente esta condição".</p>
+
+    <h2>Exemplo:</h2>
+    <pre>
+        <!-- BEGIN: Exemplo de Elif -->
+        {% if cumprimento == 1 %}
+            <h1>Olá</h1>
+        {% elif cumprimento == 2 %}
+            <h1>Bem-vindo</h1>
+        {% endif %}
+        <!-- END: Exemplo de Elif -->
+    </pre>
+
+    <h2>Else</h2>
+    <p>A palavra-chave else captura qualquer coisa que não seja capturada pelas condições anteriores.</p>
+
+    <h2>Exemplo:</h2>
+    <pre>
+        <!-- BEGIN: Exemplo de Else -->
+        {% if cumprimento == 1 %}
+            <h1>Olá</h1>
+        {% elif cumprimento == 2 %}
+            <h1>Bem-vindo</h1>
+        {% else %}
+            <h1>Adeus</h1>
+        {% endif %}
+        <!-- END: Exemplo de Else -->
+    </pre>
+
+    <h2>Operadores</h2>
+    <p>Os exemplos acima usam vários operadores para comparar valores.</p>
+
+    <h2>Exemplo:</h2>
+    <pre>
+        <!-- BEGIN: Exemplo de Operadores 1 -->
+        {% if cumprimento %}
+            <h1>Olá</h1>
+        {% endif %}
+        <!-- END: Exemplo de Operadores 1 -->
+    </pre>
+
+    <pre>
+        <!-- BEGIN: Exemplo de Operadores 2 -->
+        {% if cumprimento == 2 %}
+            <h1>Olá</h1>
+        {% endif %}
+        <!-- END: Exemplo de Operadores 2 -->
+    </pre>
+
+    <pre>
+        <!-- BEGIN: Exemplo de Operadores 3 -->
+        {% if cumprimento != 1 %}
+            <h1>Olá</h1>
+        {% endif %}
+        <!-- END: Exemplo de Operadores 3 -->
+    </pre>
+
+    <pre>
+        <!-- BEGIN: Exemplo de Operadores 4 -->
+        {% if cumprimento < 3 %}
+            <h1>Olá</h1>
+        {% endif %}
+        <!-- END: Exemplo de Operadores 4 -->
+    </pre>
+
+    <pre>
+        <!-- BEGIN: Exemplo de Operadores 5 -->
+        {% if cumprimento <= 3 %}
+            <h1>Olá</h1>
+        {% endif %}
+        <!-- END: Exemplo de Operadores 5 -->
+    </pre>
+
+    <pre>
+        <!-- BEGIN: Exemplo de Operadores 6 -->
+        {% if cumprimento > 1 %}
+            <h1>Olá</h1>
+        {% endif %}
+        <!-- END: Exemplo de Operadores 6 -->
+    </pre>
+
+    <pre>
+        <!-- BEGIN: Exemplo de Operadores 7 -->
+        {% if cumprimento >= 1 %}
+            <h1>Olá</h1>
+        {% endif %}
+        <!-- END: Exemplo de Operadores 7 -->
+    </pre>
+
+    <pre>
+        <!-- BEGIN: Exemplo de Operadores 8 -->
+        {% if cumprimento == 1 and dia == "Sexta-feira" %}
+            <h1>Olá fim de semana!</h1>
+        {% endif %}
+        <!-- END: Exemplo de Operadores 8 -->
+    </pre>
+
+    <pre>
+        <!-- BEGIN: Exemplo de Operadores 9 -->
+        {% if cumprimento == 1 or cumprimento == 5 %}
+            <h1>Olá</h1>
+        {% endif %}
+        <!-- END: Exemplo de Operadores 9 -->
+    </pre>
+
+    <pre>
+        <!-- BEGIN: Exemplo de Operadores 10 -->
+        {% if cumprimento == 1 and dia == "Sexta-feira" or cumprimento == 5 %}
+            <h1>Olá fim de semana!</h1>
+        {% endif %}
+        <!-- END: Exemplo de Operadores 10 -->
+    </pre>
+
+    <pre>
+        <!-- BEGIN: Exemplo de Operadores 11 -->
+        {% if 'Banana' in frutas %}
+            <h1>Olá</h1>
+        {% else %}
+            <h1>Adeus</h1>
+        {% endif %}
+        <!-- END: Exemplo de Operadores 11 -->
+    </pre>
+
+    <pre>
+        <!-- BEGIN: Exemplo de Operadores 12 -->
+        {% if 'Banana' not in frutas %}
+            <h1>Olá</h1>
+        {% else %}
+            <h1>Adeus</h1>
+        {% endif %}
+        <!-- END: Exemplo de Operadores 12 -->
+    </pre>
+
+    <pre>
+        <!-- BEGIN: Exemplo de Operadores 13 -->
+        {% if x is y %}
+            <h1>SIM</h1>
+        {% else %}
+            <h1>NÃO</h1>
+        {% endif %}
+        <!-- END: Exemplo de Operadores 13 -->
+    </pre>
+
+    <pre>
+        <!-- BEGIN: Exemplo de Operadores 14 -->
+        {% if x == y %}
+            <h1>SIM</h1>
+        {% else %}
+            <h1>NÃO</h1>
+        {% endif %}
+        <!-- END: Exemplo de Operadores 14 -->
+    </pre>
+
+    <pre>
+        <!-- BEGIN: Exemplo de Operadores 15 -->
+        {% with var1=x var2=x %}
+            {% if var1 is var2 %}
+                <h1>SIM</h1>
+            {% else %}
+                <h1>NÃO</h1>
+            {% endif %}
+        {% endwith %}
+        <!-- END: Exemplo de Operadores 15 -->
+    </pre>
+
+    <pre>
+        <!-- BEGIN: Exemplo de Operadores 16 -->
+        {% if x is not y %}
+            <h1>SIM</h1>
+        {% else %}
+            <h1>NÃO</h1>
+        {% endif %}
+        <!-- END: Exemplo de Operadores 16 -->
+    </pre>
+</body>
+</html>

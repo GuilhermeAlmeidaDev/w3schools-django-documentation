@@ -1,0 +1,77 @@
+<!-- FILEPATH: /d:/Projects/project-management-platform/meu_clube_de_tenis/membros/syntax_study/variables.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Django: Variáveis</title>
+</head>
+<body>
+    <h1>Variáveis de Template do Django</h1>
+    <p>Nos templates do Django, você pode renderizar variáveis colocando-as dentro de colchetes {{ }}.</p>
+
+    <h2>Exemplo: Obtenha seu próprio servidor Django</h2>
+    <p>templates/template.html:</p>
+    <code>
+        &lt;h1&gt;Olá {{ firstname }}, como você está?&lt;/h1&gt;
+    </code>
+
+    <h2>Criar Variável na View</h2>
+    <p>A variável <code>firstname</code> no exemplo acima foi enviada para o template por meio de uma view:</p>
+    <p>views.py:</p>
+    <code>
+        from django.http import HttpResponse<br>
+        from django.template import loader<br><br>
+        
+        def testing(request):<br>
+            &nbsp;&nbsp;template = loader.get_template('template.html')<br>
+            &nbsp;&nbsp;context = {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;'firstname': 'Linus',<br>
+            &nbsp;&nbsp;}<br>
+            &nbsp;&nbsp;return HttpResponse(template.render(context, request))
+    </code>
+
+    <h2>Criar Variáveis no Template</h2>
+    <p>Você também pode criar variáveis diretamente no template, usando a tag de template <code>{% with %}</code>.</p>
+    <p>A variável está disponível até que a tag <code>{% endwith %}</code> apareça:</p>
+    <p>Exemplo:</p>
+    <code>
+        {% with firstname="Tobias" %}<br>
+        &nbsp;&nbsp;&lt;h1&gt;Olá {{ firstname }}, como você está?&lt;/h1&gt;<br>
+        {% endwith %}
+    </code>
+
+    <p>Você aprenderá mais sobre tags de template no próximo capítulo.</p>
+
+    <h2>Dados de um Modelo</h2>
+    <p>O exemplo acima mostrou uma abordagem fácil de como criar e usar variáveis em um template.</p>
+    <p>Normalmente, a maioria dos dados externos que você deseja usar em um template vem de um modelo.</p>
+    <p>Nós criamos um modelo nos capítulos anteriores, chamado Member, que usaremos em muitos exemplos nos próximos capítulos deste tutorial.</p>
+    <p>Para obter dados do modelo Member, teremos que importá-lo no arquivo views.py e extrair dados dele na view:</p>
+    <p>members/views.py:</p>
+    <code>
+        from django.http import HttpResponse, HttpResponseRedirect<br>
+        from django.template import loader<br>
+        from .models import Member<br><br>
+        
+        def testing(request):<br>
+            &nbsp;&nbsp;mymembers = Member.objects.all().values()<br>
+            &nbsp;&nbsp;template = loader.get_template('template.html')<br>
+            &nbsp;&nbsp;context = {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;'mymembers': mymembers,<br>
+            &nbsp;&nbsp;}<br>
+            &nbsp;&nbsp;return HttpResponse(template.render(context, request))
+    </code>
+
+    <p>Agora podemos usar os dados no template:</p>
+    <p>templates/template.html:</p>
+    <code>
+        &lt;ul&gt;<br>
+        {% for x in mymembers %}<br>
+        &nbsp;&nbsp;&lt;li&gt;{{ x.firstname }}&lt;/li&gt;<br>
+        {% endfor %}<br>
+        &lt;/ul&gt;
+    </code>
+
+    <p>Usamos a tag de template do Django <code>{% for %}</code> para percorrer os membros.</p>
+    <p>Você aprenderá mais sobre tags de template no próximo capítulo.</p>
+</body>
+</html>
