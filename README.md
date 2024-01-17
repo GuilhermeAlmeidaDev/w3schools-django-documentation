@@ -15,6 +15,13 @@ pip install -r requirements.txt
 after installing the required packages, run the project.
 
 ```bash
+cd .\meu_clube_de_tenis\
+python manage.py migrate
+```
+
+after setting up the project, start the server.
+
+```bash
 python manage.py runserver
 ```
 
