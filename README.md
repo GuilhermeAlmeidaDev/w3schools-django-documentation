@@ -6,14 +6,9 @@ This repository is for studying Django with content available at [W3School Djang
 
 ## Installation
 
-Install using `pip`...
+To install this project on your local machine, install the required packages and run the project.
 
-    pip install djangorestframework
-
-Add `'rest_framework'` to your `INSTALLED_APPS` setting.
-
-    INSTALLED_APPS = [
-        ...
-        'rest_framework',
-    ]
-
+```bash
+pip install -r requirements.txt
+python manage.py runserver
+```
