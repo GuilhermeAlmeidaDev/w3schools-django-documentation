@@ -3,6 +3,7 @@
 ## 1. Description
 
 This repository is for studying Django with content available at [W3School Django Tutorial](https://www.w3schools.com/django/).
+in this study, I will create a tennis club website using `Python 3.10.6`.
 
 ## 2. Installation
 
