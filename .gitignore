@@ -4,10 +4,9 @@
 *.pyc
 __pycache__
 meu_clube_de_tenis/db.sqlite3
-meu_clube_de_tenis\db.sqlite3
 meu_clube_de_tenis/static/
 media
 
 
 # Enviroment #
-/venv
+/venv/

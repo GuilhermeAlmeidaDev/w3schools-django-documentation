@@ -26,9 +26,9 @@ def main(request):
 
 
 def testing(request):
-  meus_membros = Membro.objects.all().values()
+  meus_dados = Membro.objects.all().values()
   template = loader.get_template('template.html')
   context = {
-    'meus_membros': meus_membros, 
+    'meus_membros': meus_dados, 
   }
   return HttpResponse(template.render(context, request))
