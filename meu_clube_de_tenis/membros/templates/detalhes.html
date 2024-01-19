@@ -1,16 +1,13 @@
 {% extends "master.html" %}
 
-{% block title %}Detalhes{% endblock %}
+{% block title %}
+    Detalhes sobre: {{ meu_membro.primeiro_nome }} {{ meu_membro.ultimo_nome }}
+{% endblock %}
 
 {% block content %}
-
-    <h1>Dados do Membro {{ meu_membro.primeiro_nome }} {{ meu_membro.ultimo_nome }}</h1>
-    
-    <p>Primeiro Nome: {{ meu_membro.primeiro_nome }}</p>
-    <p>Último Nome: {{ meu_membro.ultimo_nome }}</p>
-    <p>telefone: {{ meu_membro.telefone }}</p>
-    <p>membro des de: {{ meu_membro.entrou_em }}</p>
-
-    <p>Voltar para <a href="/membros">Membros</a></p>
-
+    <div class="mycard">
+        <h1>{{ meu_membro.primeiro_nome }} {{ meu_membro.ultimo_nome }}</h1>
+        <p>Telefone: {{ meu_membro.telefone }}</p>
+        <p>Membro des de: {{ meu_membro.entrou_em }}</p>
+    </div>
 {% endblock %}

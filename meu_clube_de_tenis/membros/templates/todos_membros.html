@@ -1,14 +1,15 @@
 {% extends "master.html" %}
 
-{% block title %}Todos os Membros{% endblock %}
+{% block title %}
+    Todos os Membros
+{% endblock %}
 
 {% block content %}
-    <p><a href="/">INICIO</a></p>
-
-    <h1>Olá, você está vendo a lista de Membros!</h1>
-    
-    <ul>
-        {% for membro in meus_membros %}
-            <li><a href="detalhes/{{ membro.id }}">{{ membro.primeiro_nome }} {{ membro.ultimo_nome }}</a></li>
-        {% endfor %}
+    <div class="mycard">
+        <h1>Membros</h1>
+        <ul>
+            {% for membro in meus_membros %}
+                <li onclick="window.location = 'detalhes/{{ membro.id }}'">{{ membro.primeiro_nome }} {{ membro.ultimo_nome }}</li>
+            {% endfor %}
+    </div>
 {% endblock %}
